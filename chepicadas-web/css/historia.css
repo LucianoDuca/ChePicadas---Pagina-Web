@@ -1,0 +1,9 @@
+/* ============================================================
+   HISTORIA.CSS — línea de tiempo vertical
+   ============================================================ */
+
+.timeline { position: relative; padding-left: 1.5rem; }
+.timeline::before { content: ""; position: absolute; left: 6px; top: 0.5rem; bottom: 0.5rem; width: 3px; background: var(--mostaza); border-radius: 3px; }
+.timeline li { position: relative; list-style: none; padding-bottom: var(--space-l); }
+.timeline li::before { content: ""; position: absolute; left: -1.5rem; top: 0.35rem; width: 15px; height: 15px; border-radius: 50%; background: var(--rojo-bodegon); border: 3px solid var(--crema); box-shadow: 0 0 0 2px var(--rojo-bodegon); }
+.timeline .año { font-family: var(--font-display); color: var(--rojo-bodegon); font-size: var(--step-1); }

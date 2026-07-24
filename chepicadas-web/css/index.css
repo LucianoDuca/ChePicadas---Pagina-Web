@@ -1,0 +1,27 @@
+/* ============================================================
+   INDEX.CSS — estilos propios del Home
+   (hero, barra de prueba social, card de la 21, galería)
+   ============================================================ */
+
+/* ---------- HERO ---------- */
+.hero { position: relative; color: var(--hueso); isolation: isolate; }
+.hero__media { position: absolute; inset: 0; z-index: -2; }
+.hero__media .ph { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; border: 0; }
+.hero__media .ph span { opacity: 0.3; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(58,42,32,0.55) 0%, rgba(142,29,34,0.7) 100%); }
+.hero__inner { padding-block: clamp(3rem, 10vw, 7rem); }
+.hero h1 { font-family: var(--font-display); color: var(--hueso); font-size: var(--step-5); line-height: 0.98; max-width: 16ch; text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
+.hero p { font-size: var(--step-1); max-width: 42ch; margin-top: var(--space-s); }
+
+/* ---------- BARRA DE PRUEBA SOCIAL ---------- */
+.social-bar { background: var(--madera); color: var(--hueso); display: flex; flex-wrap: wrap; gap: var(--space-m) var(--space-l); align-items: center; justify-content: center; padding-block: var(--space-s); text-align: center; }
+.social-bar strong { color: var(--mostaza); }
+
+/* ---------- LA 21 PLATITOS (card reina) ---------- */
+.reina { background: var(--rojo-bodegon); color: var(--hueso); border: 3px solid var(--madera); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: var(--space-l); display: grid; gap: var(--space-m); align-items: center; }
+.reina h2, .reina h3 { color: var(--hueso); }
+.reina .badge-21 { font-family: var(--font-display); font-size: var(--step-4); background: var(--mostaza); color: var(--madera); display: inline-block; justify-self: start; padding: 0.1em 0.4em; border-radius: var(--radius); transform: rotate(-3deg); }
+@media (min-width: 720px) { .reina { grid-template-columns: auto 1fr; } }
+
+/* ---------- GALERÍA "EL ALMACÉN" ---------- */
+.gallery { display: grid; gap: var(--space-s); grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }

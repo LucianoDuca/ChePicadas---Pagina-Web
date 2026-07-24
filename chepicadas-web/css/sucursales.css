@@ -1,0 +1,16 @@
+/* ============================================================
+   SUCURSALES.CSS — tarjetas de sede + mapa lazy
+   ============================================================ */
+
+#sedes-list { display: flex; flex-direction: column; }
+
+.sede-card { display: grid; gap: var(--space-m); }
+@media (min-width: 820px) { .sede-card { grid-template-columns: 1.1fr 1fr; align-items: start; } }
+
+.map-facade { position: relative; border: 2px solid var(--madera); border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; }
+.map-facade button.map-load { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; background: rgba(58,42,32,0.35); color: var(--hueso); border: 0; width: 100%; height: 100%; font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.05em; }
+.map-facade iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+.data-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+.data-list li { display: flex; gap: 0.5rem; align-items: baseline; }
+.data-list .k { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.04em; font-size: var(--step--1); color: var(--brand); min-width: 6.5rem; }
