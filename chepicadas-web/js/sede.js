@@ -55,7 +55,8 @@ function applySede(id) {
   // Teléfono clickeable
   document.querySelectorAll('[data-bind-tel]').forEach((el) => {
     el.setAttribute('href', `tel:${sede.telefono.replace(/[^\d+]/g, '')}`);
-    if (el.hasAttribute('data-bind-tel-text')) el.textContent = sede.telefonoDisplay;
+    const textTarget = el.hasAttribute('data-bind-tel-text') ? el : el.querySelector('[data-bind-tel-text]');
+    if (textTarget) textTarget.textContent = sede.telefonoDisplay;
   });
 
   // WhatsApp

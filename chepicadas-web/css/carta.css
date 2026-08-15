@@ -13,14 +13,26 @@
 
 .dish { display: grid; grid-template-columns: 1fr auto; gap: 0.2rem var(--space-s); padding-block: var(--space-s); border-bottom: 1px dashed var(--madera-suave); align-items: baseline; }
 .dish__name { font-family: var(--font-head); font-size: var(--step-1); font-weight: 600; }
-.dish__price { font-family: var(--font-head); font-weight: 700; color: var(--rojo-bodegon); font-size: var(--step-1); white-space: nowrap; }
+.dish__price { font-family: var(--font-head); font-weight: 700; color: var(--ambar); font-size: var(--step-1); white-space: nowrap; }
 .dish__price--free { color: var(--verde-botella); }
 .dish__desc { grid-column: 1 / -1; color: var(--text-muted); font-size: var(--step--1); }
 .dish__meta { grid-column: 1 / -1; display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.3rem; }
-.dish--reina { background: var(--hueso); border: 2px solid var(--rojo-bodegon); border-radius: var(--radius); padding: var(--space-s); box-shadow: var(--shadow-card); }
+.dish--reina { background: var(--hueso); border: 2px solid var(--dorado-oscuro); border-radius: var(--radius); padding: var(--space-s); box-shadow: var(--shadow-card); }
 
 .picada-split { display: grid; gap: var(--space-m); }
 @media (min-width: 700px) { .picada-split { grid-template-columns: 1fr 1fr; } }
 .picada-col { background: var(--hueso); border: 2px solid var(--madera); border-radius: var(--radius); padding: var(--space-m); }
 .picada-col--fria { border-top: 6px solid var(--celeste-arg); }
-.picada-col--caliente { border-top: 6px solid var(--rojo-bodegon); }
+.picada-col--caliente { border-top: 6px solid var(--dorado-oscuro); }
+
+/* ---------- IMPRESIÓN / GUARDAR COMO PDF ---------- */
+@media print {
+  .site-header, .site-footer, .wsp-float, .menu-nav, .skip-link, [data-print], .btn-row { display: none !important; }
+  body { background: #fff; color: #000; }
+  .card, .card--inset, .picada-col { border-color: #000; box-shadow: none; }
+  .dish { break-inside: avoid; }
+  .menu-section { break-inside: avoid-page; }
+  .dish__price, .menu-section > h2, .año, h1, h2, h3 { color: #000 !important; }
+  a { color: #000; text-decoration: none; }
+  .section, .section--tight { padding-block: 0.5rem; }
+}

@@ -49,7 +49,7 @@ app.use('/js', express.static(join(__dirname, 'js'), staticOpts));
 app.use('/assets', express.static(join(__dirname, 'assets'), staticOpts));
 
 // Archivos sueltos de la raíz
-['/favicon.svg', '/robots.txt', '/sitemap.xml', '/carta.pdf'].forEach((file) => {
+['/favicon.png', '/robots.txt', '/sitemap.xml', '/carta.pdf'].forEach((file) => {
   app.get(file, (req, res) => res.sendFile(join(__dirname, file), { headers: { 'Cache-Control': 'no-cache' } }));
 });
 
@@ -60,6 +60,7 @@ const PAGES = {
   '/historia': 'historia.html',
   '/sucursales': 'sucursales.html',
   '/reservas': 'reservas.html',
+  '/privacidad': 'privacidad.html',
 };
 for (const [route, file] of Object.entries(PAGES)) {
   const send = (req, res) => res.sendFile(join(__dirname, file), { headers: { 'Cache-Control': 'no-cache' } });

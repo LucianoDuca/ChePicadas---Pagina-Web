@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es-AR" data-sede="mdp">
+<html lang="es-AR" data-sede="mza">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sucursales — Güemes (MdP) y Arístides (Mza) · Che Picadas</title>
   <meta name="description" content="Nuestras dos casas: Olavarría 3325 en el barrio Güemes de Mar del Plata y Arístides Villanueva 284 en Mendoza. Horarios, teléfonos y cómo llegar." />
   <link rel="canonical" href="https://chepicadas.com.ar/sucursales" />
-  <meta name="theme-color" content="#B5262C" />
+  <meta name="theme-color" content="#E7A82D" />
 
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Che Picadas" />
@@ -15,8 +15,12 @@
   <meta property="og:url" content="https://chepicadas.com.ar/sucursales" />
   <meta property="og:locale" content="es_AR" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://chepicadas.com.ar/assets/img/imagen-fondo.jpg" />
+  <meta property="og:image:alt" content="Picada y parrilla de Che Picadas" />
+  <meta name="twitter:image" content="https://chepicadas.com.ar/assets/img/imagen-fondo.jpg" />
 
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/img/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap" />
@@ -29,7 +33,7 @@
   </script>
 
   <script type="application/json" id="sedes-data">
-  {"default":"mdp","sedes":{
+  {"default":"mza","sedes":{
     "mdp":{"id":"mdp","nombreCorto":"Mar del Plata","direccion":"Olavarría 3325, B7602 Mar del Plata, Buenos Aires","telefono":"+54 223 654-7977","telefonoDisplay":"223 654-7977","whatsapp":"5492236357854","geo":{"lat":-38.0185528,"lng":-57.5456436},"placeId":"ChIJk3P7eCXchJURVfQFygYPmFU","horariosSemana":{"0":{"abre":"18:00","cierra":"01:30"},"1":{"abre":"12:00","cierra":"01:30"},"2":{"abre":"12:00","cierra":"01:30"},"3":{"abre":"12:00","cierra":"01:30"},"4":{"abre":"12:00","cierra":"01:30"},"5":{"abre":"12:00","cierra":"01:30"},"6":{"abre":"12:00","cierra":"01:30"}}},
     "mza":{"id":"mza","nombreCorto":"Mendoza","direccion":"Arístides Villanueva 284, M5500 Ciudad de Mendoza","telefono":"+54 261 418-4052","telefonoDisplay":"261 418-4052","whatsapp":"5492614184052","geo":{"lat":-32.8926596,"lng":-68.8545022},"placeId":"ChIJX8e2CVoJfpYRIqtUCRzactk","horariosSemana":{"0":{"abre":"12:00","cierra":"01:00"},"1":{"abre":"12:00","cierra":"01:00"},"2":{"abre":"12:00","cierra":"01:00"},"3":{"abre":"12:00","cierra":"01:00"},"4":{"abre":"12:00","cierra":"01:00"},"5":{"abre":"12:00","cierra":"01:00"},"6":{"abre":"12:00","cierra":"01:00"}}}
   }}
@@ -41,26 +45,9 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label="Che Picadas — inicio">
-        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="10" fill="#8E1D22"/><rect x="6" y="6" width="52" height="52" rx="7" fill="none" stroke="#F2E4C9" stroke-width="2"/><text x="32" y="43" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="900" fill="#F2E4C9">Ch</text></svg>
+        <img class="brand__mark" src="/assets/img/logo-che-picadas-header.png" alt="" width="40" height="40" />
         <span>Che Picadas <small>Almacén de picadas</small></span>
       </a>
-      <div class="sede-switch" role="group" aria-label="Elegí tu sede">
-        <button type="button" data-sede-btn="mdp" aria-pressed="false">Mar del Plata</button>
-        <button type="button" data-sede-btn="mza" aria-pressed="false">Mendoza</button>
-      </div>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
-        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        Menú
-      </button>
-      <nav class="nav" id="main-nav" aria-label="Principal" data-open="false">
-        <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/carta">La Carta</a></li>
-          <li><a href="/historia">Historia</a></li>
-          <li><a href="/sucursales" aria-current="page">Sucursales</a></li>
-          <li><a href="/reservas">Reservas</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
@@ -75,22 +62,18 @@
       <!-- ===== MAR DEL PLATA ===== -->
       <section class="section--tight" data-sede-section="mdp" aria-label="Che Picadas Mar del Plata">
         <div class="sede-card">
-          <div class="map-facade" data-map-src="https://www.google.com/maps?q=-38.0185528,-57.5456436&output=embed" data-map-title="Mapa de Che Picadas Mar del Plata">
-            <div class="ph" style="width:100%;height:100%;aspect-ratio:auto;border:0;border-radius:0"><span>[MAPA: Mar del Plata]</span></div>
-            <button type="button" class="map-load">
-              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              Ver mapa de Mar del Plata
-            </button>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps?q=-38.0185528,-57.5456436&output=embed" title="Mapa de Che Picadas Mar del Plata" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
           </div>
           <div class="stack">
-            <h2>Che Picadas Mar del Plata <small style="font-family:var(--font-head);font-weight:400;color:var(--brand)">· Casa matriz</small></h2>
+            <h2>Che Picadas Mar del Plata <span class="chip">Casa matriz</span></h2>
             <p class="estado" data-estado="mdp"><span class="estado__dot" aria-hidden="true"></span><span data-estado-label>Consultá horarios</span></p>
             <ul class="data-list">
-              <li><span class="k">Dirección</span><span>Olavarría 3325, B7602 Mar del Plata, Buenos Aires</span></li>
-              <li><span class="k">Teléfono</span><a href="tel:+542236547977">223 654-7977</a></li>
-              <li><span class="k">WhatsApp</span><a href="https://wa.me/5492236357854?text=%C2%A1Hola%20Che%20Picadas%20Mar%20del%20Plata!%20Quer%C3%ADa%20hacer%20una%20consulta." target="_blank" rel="noopener">223 635-7854</a></li>
-              <li><span class="k">Horarios</span><span>Lunes a Sábado: 12:00–01:30<br>Domingo: 18:00–01:30</span></li>
-              <li><span class="k">Instagram</span><a href="https://instagram.com/chepicadasmdp" target="_blank" rel="noopener">@chepicadasmdp</a></li>
+              <li><span class="k"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Dirección</span><span>Olavarría 3325, B7602 Mar del Plata, Buenos Aires</span></li>
+              <li><span class="k"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Teléfono</span><a href="tel:+542236547977">223 654-7977</a></li>
+              <li><span class="k"><svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2.1c1.8 1 3.9 1.5 6 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-4.4 1.2 1.2-4.3-.3-.4c-1-1.7-1.6-3.6-1.6-5.5C5.4 9.7 10.1 5 16 5s10.6 4.7 10.6 10.5S21.9 25.7 16 25.7zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-1.9-.9-3.1-1.7-4.4-3.8-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-1.3 1.3-1.3 3.1-.1 5 .1.2 2.1 3.2 5.1 4.5 3 1.3 3 .9 3.5.8.5 0 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>WhatsApp</span><a href="https://wa.me/5492236357854?text=%C2%A1Hola%20Che%20Picadas%20Mar%20del%20Plata!%20Quer%C3%ADa%20hacer%20una%20consulta." target="_blank" rel="noopener">223 635-7854</a></li>
+              <li><span class="k"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Horarios</span><span>Lunes a Sábado: 12:00–01:30<br>Domingo: 18:00–01:30</span></li>
+              <li><span class="k"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg>Instagram</span><a href="https://instagram.com/chepicadasmdp" target="_blank" rel="noopener">@chepicadasmdp</a></li>
             </ul>
             <div>
               <p class="eyebrow">Lo que vas a encontrar</p>
@@ -113,22 +96,18 @@
       <!-- ===== MENDOZA ===== -->
       <section class="section--tight" data-sede-section="mza" aria-label="Che Picadas Mendoza">
         <div class="sede-card">
-          <div class="map-facade" data-map-src="https://www.google.com/maps?q=-32.8926596,-68.8545022&output=embed" data-map-title="Mapa de Che Picadas Mendoza">
-            <div class="ph" style="width:100%;height:100%;aspect-ratio:auto;border:0;border-radius:0"><span>[MAPA: Mendoza]</span></div>
-            <button type="button" class="map-load">
-              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              Ver mapa de Mendoza
-            </button>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps?q=-32.8926596,-68.8545022&output=embed" title="Mapa de Che Picadas Mendoza" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
           </div>
           <div class="stack">
-            <h2>Che Picadas Mendoza <small style="font-family:var(--font-head);font-weight:400;color:var(--brand)">· Sucursal</small></h2>
+            <h2>Che Picadas Mendoza <span class="chip">Sucursal</span></h2>
             <p class="estado" data-estado="mza"><span class="estado__dot" aria-hidden="true"></span><span data-estado-label>Consultá horarios</span></p>
             <ul class="data-list">
-              <li><span class="k">Dirección</span><span>Arístides Villanueva 284, M5500 Ciudad de Mendoza</span></li>
-              <li><span class="k">Teléfono</span><a href="tel:+542614184052">261 418-4052</a></li>
-              <li><span class="k">WhatsApp</span><a href="https://wa.me/5492614184052?text=%C2%A1Hola%20Che%20Picadas%20Mendoza!%20Quer%C3%ADa%20hacer%20una%20consulta." target="_blank" rel="noopener">261 418-4052</a></li>
-              <li><span class="k">Horarios</span><span>Todos los días: 12:00–01:00</span></li>
-              <li><span class="k">Instagram</span><a href="https://instagram.com/chepicadasmendoza" target="_blank" rel="noopener">@chepicadasmendoza</a></li>
+              <li><span class="k"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Dirección</span><span>Arístides Villanueva 284, M5500 Ciudad de Mendoza</span></li>
+              <li><span class="k"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Teléfono</span><a href="tel:+542614184052">261 418-4052</a></li>
+              <li><span class="k"><svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2.1c1.8 1 3.9 1.5 6 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-4.4 1.2 1.2-4.3-.3-.4c-1-1.7-1.6-3.6-1.6-5.5C5.4 9.7 10.1 5 16 5s10.6 4.7 10.6 10.5S21.9 25.7 16 25.7zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-1.9-.9-3.1-1.7-4.4-3.8-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-1.3 1.3-1.3 3.1-.1 5 .1.2 2.1 3.2 5.1 4.5 3 1.3 3 .9 3.5.8.5 0 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>WhatsApp</span><a href="https://wa.me/5492614184052?text=%C2%A1Hola%20Che%20Picadas%20Mendoza!%20Quer%C3%ADa%20hacer%20una%20consulta." target="_blank" rel="noopener">261 418-4052</a></li>
+              <li><span class="k"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Horarios</span><span>Todos los días: 12:00–01:00</span></li>
+              <li><span class="k"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg>Instagram</span><a href="https://instagram.com/chepicadasmendoza" target="_blank" rel="noopener">@chepicadasmendoza</a></li>
             </ul>
             <div>
               <p class="eyebrow">Lo que vas a encontrar</p>
@@ -156,19 +135,31 @@
     <svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2.1c1.8 1 3.9 1.5 6 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-4.4 1.2 1.2-4.3-.3-.4c-1-1.7-1.6-3.6-1.6-5.5C5.4 9.7 10.1 5 16 5s10.6 4.7 10.6 10.5S21.9 25.7 16 25.7zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-1.9-.9-3.1-1.7-4.4-3.8-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-1.3 1.3-1.3 3.1-.1 5 .1.2 2.1 3.2 5.1 4.5 3 1.3 3 .9 3.5.8.5 0 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>
   </a>
 
+  <!-- ===================== NAVBAR INFERIOR (app) ===================== -->
+  <nav class="app-tabbar" aria-label="Navegación rápida">
+    <a class="app-tabbar__item" href="/" data-tab="/"><svg class="app-tabbar__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg><span>Inicio</span></a>
+    <a class="app-tabbar__item" href="/carta" data-tab="/carta"><svg class="app-tabbar__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/></svg><span>Carta</span></a>
+    <a class="app-tabbar__item app-tabbar__item--cta" href="/reservas" data-tab="/reservas"><span class="app-tabbar__fab"><svg class="app-tabbar__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg></span><span>Reservar</span></a>
+    <a class="app-tabbar__item" href="/sucursales" data-tab="/sucursales"><svg class="app-tabbar__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Sedes</span></a>
+    <a class="app-tabbar__item" href="/historia" data-tab="/historia"><svg class="app-tabbar__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4.5M12 8.2v.01"/></svg><span>Nosotros</span></a>
+  </nav>
+
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <h3>Che Picadas</h3>
+        <div class="footer-brand">
+          <img class="footer-brand__mark" src="/assets/img/logo-che-picadas-header.png" alt="" width="36" height="36" />
+          <h3>Che Picadas</h3>
+        </div>
         <p>Almacén de picadas · Bodegón & Parrilla Argentina.</p>
         <p><strong style="color:var(--mostaza)">La picada es para dos. Comen tres.</strong></p>
       </div>
       <div>
-        <h3>Sede <span data-bind="nombreCorto">Mar del Plata</span></h3>
+        <h3>Sede <span data-bind="nombreCorto">Mendoza</span></h3>
         <ul>
-          <li data-bind="direccion">Olavarría 3325, Mar del Plata</li>
-          <li>Tel: <a data-bind-tel data-bind-tel-text href="#">—</a></li>
-          <li><a data-bind-wsp data-wsp-text="¡Hola Che Picadas! Quería hacer una consulta." href="#">WhatsApp</a></li>
+          <li data-bind="direccion">Arístides Villanueva 284, Mendoza</li>
+          <li><a class="footer-link" data-bind-tel href="#"><svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-bind-tel-text>—</span></a></li>
+          <li><a class="footer-link" data-bind-wsp data-wsp-text="¡Hola Che Picadas! Quería hacer una consulta." href="#"><svg class="footer-icon" viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2.1c1.8 1 3.9 1.5 6 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-4.4 1.2 1.2-4.3-.3-.4c-1-1.7-1.6-3.6-1.6-5.5C5.4 9.7 10.1 5 16 5s10.6 4.7 10.6 10.5S21.9 25.7 16 25.7zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-1.9-.9-3.1-1.7-4.4-3.8-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-1.3 1.3-1.3 3.1-.1 5 .1.2 2.1 3.2 5.1 4.5 3 1.3 3 .9 3.5.8.5 0 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>WhatsApp</a></li>
           <li><a data-bind-maps href="#" target="_blank" rel="noopener">Cómo llegar</a></li>
         </ul>
         <p class="estado" data-estado="activa"><span class="estado__dot" aria-hidden="true"></span><span data-estado-label>Consultá horarios</span></p>
@@ -192,7 +183,7 @@
       </div>
     </div>
     <div class="footer-bottom wrap">
-      <p>© <span id="year">2026</span> Che Picadas. Todos los derechos reservados. · Los precios son de referencia y pueden variar. Consultá el precio final en el local.</p>
+      <p>© <span id="year">2026</span> Che Picadas. Todos los derechos reservados. · Los precios son de referencia y pueden variar. Consultá el precio final en el local. · <a href="/privacidad">Política de Privacidad</a></p>
     </div>
   </footer>
 

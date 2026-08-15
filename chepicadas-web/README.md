@@ -48,7 +48,7 @@ chepicadas-web/
 │   ├── sucursales.js   ← solo Sucursales: mapa lazy + orden de sedes
 │   └── reservas.js     ← solo Reservas: arma el WhatsApp
 ├── assets/             ← img / fonts / videos (cuando lleguen los reales)
-├── favicon.svg, robots.txt, sitemap.xml
+├── favicon.png, robots.txt, sitemap.xml
 ├── server.js           ← Express: sirve estáticos con seguridad y URLs limpias
 └── package.json
 ```

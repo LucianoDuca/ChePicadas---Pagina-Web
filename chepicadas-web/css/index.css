@@ -3,25 +3,115 @@
    (hero, barra de prueba social, card de la 21, galería)
    ============================================================ */
 
-/* ---------- HERO ---------- */
-.hero { position: relative; color: var(--hueso); isolation: isolate; }
-.hero__media { position: absolute; inset: 0; z-index: -2; }
-.hero__media .ph { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; border: 0; }
-.hero__media .ph span { opacity: 0.3; }
-.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(58,42,32,0.55) 0%, rgba(142,29,34,0.7) 100%); }
-.hero__inner { padding-block: clamp(3rem, 10vw, 7rem); }
-.hero h1 { font-family: var(--font-display); color: var(--hueso); font-size: var(--step-5); line-height: 0.98; max-width: 16ch; text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
-.hero p { font-size: var(--step-1); max-width: 42ch; margin-top: var(--space-s); }
+/* ---------- SPLASH / DESBLOQUEO (solo estético, cubre la 1ª pantalla del Home) ---------- */
+html.no-scroll, html.no-scroll body { overflow: hidden; height: 100%; }
+
+.lock-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hueso);
+  background:
+    linear-gradient(180deg, rgba(58,42,32,0.72) 0%, rgba(142,29,34,0.82) 100%),
+    url('/assets/img/ambiente-mesa.jpg') center/cover no-repeat;
+  touch-action: none;
+  will-change: transform;
+}
+.lock-screen.is-hidden { display: none; }
+.lock-screen__word { font-family: var(--font-display); font-size: clamp(2.2rem, 9vw, 3.6rem); line-height: 0.92; color: var(--hueso); text-shadow: 0 2px 14px rgba(0,0,0,0.45); }
+.lock-screen__word b { color: var(--dorado); font-weight: inherit; }
+.lock-screen__sub { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.26em; font-size: 0.72rem; color: var(--crema); margin-top: 0.3rem; }
+
+.lock-screen__inner { display: flex; flex-direction: column; align-items: center; gap: var(--space-xl); padding: var(--space-l); text-align: center; }
+
+.lock-screen__logo {
+  width: clamp(120px, 32vw, 180px);
+  height: clamp(120px, 32vw, 180px);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--hueso);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  border: 4px solid var(--hueso);
+  animation: lockLogoIn 0.75s var(--ease) both;
+}
+@keyframes lockLogoIn { from { opacity: 0; transform: scale(0.82) translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .lock-screen__logo { animation: none; } }
+
+.lock-screen__hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xs);
+  background: none;
+  border: none;
+  outline: none;
+  padding: var(--space-xs) var(--space-m);
+  color: var(--hueso);
+  font-family: var(--font-head);
+  font-size: var(--step-0);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform-origin: bottom center;
+}
+
+.lock-screen__arrow { width: 28px; height: 28px; color: var(--hueso); animation: lock-hint-bounce 1.6s ease-in-out infinite; }
+
+.lock-screen__hint span { display: inline-block; animation: lock-hint-bounce 1.6s ease-in-out infinite; }
+
+@keyframes lock-hint-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+/* Esta animación indica la acción de "deslizar" (es funcional, no decorativa),
+   así que se mantiene aunque el sistema tenga las animaciones desactivadas. */
+@media (prefers-reduced-motion: reduce) {
+  .lock-screen__arrow,
+  .lock-screen__hint span { animation: lock-hint-bounce 1.6s ease-in-out infinite !important; }
+}
+
+/* ---------- HERO (inmersivo, estilo app) ---------- */
+.hero { position: relative; color: var(--hueso); isolation: isolate; display: grid; align-items: end; min-height: 86vh; min-height: 86svh; overflow: hidden; }
+@media (min-width: 900px) { .hero { min-height: 78vh; align-items: center; } }
+/* En mobile el botón flotante de WhatsApp y la tabbar inferior son fixed y el hero
+   está anclado abajo (align-items:end): sin este aire, sus CTA quedan tapadas. */
+@media (max-width: 600px) {
+  .hero .btn-row { margin-bottom: calc(var(--tabbar-h) + 56px + 24px + env(safe-area-inset-bottom, 0px)); }
+}
+.hero__media { position: absolute; inset: 0; z-index: -2; background: #3a2a20 url('/assets/img/ambiente-mesa.jpg') center/cover no-repeat; }
+.hero__media { background-image: -webkit-image-set(url('/assets/img/ambiente-mesa.webp') type('image/webp'), url('/assets/img/ambiente-mesa.jpg') type('image/jpeg')); background-image: image-set(url('/assets/img/ambiente-mesa.webp') type('image/webp'), url('/assets/img/ambiente-mesa.jpg') type('image/jpeg')); }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(58,42,32,0.25) 0%, rgba(58,42,32,0.55) 48%, rgba(58,42,32,0.92) 100%), radial-gradient(130% 90% at 50% 15%, transparent 42%, rgba(0,0,0,0.4) 100%); }
+.hero__inner { padding-block: clamp(2rem, 8vw, 5rem); position: relative; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero__media { animation: kenburns 26s ease-in-out infinite alternate; will-change: transform; }
+}
+@keyframes kenburns { from { transform: scale(1.02); } to { transform: scale(1.12); } }
+.hero h1 { font-family: var(--font-display); color: var(--hueso); font-size: var(--step-5); line-height: 0.98; max-width: 15ch; text-shadow: 0 3px 22px rgba(0,0,0,0.55); }
+.hero p { font-size: var(--step-1); max-width: 42ch; margin-top: var(--space-s); text-shadow: 0 1px 10px rgba(0,0,0,0.5); }
 
 /* ---------- BARRA DE PRUEBA SOCIAL ---------- */
-.social-bar { background: var(--madera); color: var(--hueso); display: flex; flex-wrap: wrap; gap: var(--space-m) var(--space-l); align-items: center; justify-content: center; padding-block: var(--space-s); text-align: center; }
-.social-bar strong { color: var(--mostaza); }
+.social-bar { background: var(--tomate); color: var(--hueso); font-weight: 600; display: flex; flex-wrap: wrap; gap: var(--space-m) var(--space-l); align-items: center; justify-content: center; padding-block: var(--space-s); text-align: center; }
+.social-bar strong { color: var(--hueso); }
 
 /* ---------- LA 21 PLATITOS (card reina) ---------- */
-.reina { background: var(--rojo-bodegon); color: var(--hueso); border: 3px solid var(--madera); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: var(--space-l); display: grid; gap: var(--space-m); align-items: center; }
-.reina h2, .reina h3 { color: var(--hueso); }
-.reina .badge-21 { font-family: var(--font-display); font-size: var(--step-4); background: var(--mostaza); color: var(--madera); display: inline-block; justify-self: start; padding: 0.1em 0.4em; border-radius: var(--radius); transform: rotate(-3deg); }
-@media (min-width: 720px) { .reina { grid-template-columns: auto 1fr; } }
+.reina { position: relative; background: var(--dorado); color: var(--madera); border: 3px solid var(--madera); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: var(--space-l); display: grid; gap: var(--space-m); align-items: center; }
+.cta-final { position: relative; }
+.reina h2, .reina h3 { color: var(--madera); }
+.reina .badge-21 { font-family: var(--font-display); font-size: var(--step-3); background: var(--madera); color: var(--dorado); display: inline-block; padding: 0.05em 0.35em; border-radius: var(--radius); transform: rotate(-6deg); }
+.reina .btn--accent { background: var(--madera); color: var(--dorado); }
+.reina .btn--accent:hover { background: var(--madera-suave); color: var(--dorado); }
+.reina__media { position: relative; }
+.reina__media .badge-21 { position: absolute; top: -18px; left: -12px; z-index: 3; box-shadow: var(--shadow-s); }
+@media (min-width: 720px) { .reina { grid-template-columns: 1.05fr 0.95fr; } }
+
+/* ---------- FOTO EN TARJETAS DE PLATOS ---------- */
+.card__foto { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); margin-bottom: var(--space-xs); display: block; }
 
 /* ---------- GALERÍA "EL ALMACÉN" ---------- */
 .gallery { display: grid; gap: var(--space-s); grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+.gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); display: block; }
+@media (max-width: 520px) { .gallery { grid-template-columns: repeat(2, 1fr); } }

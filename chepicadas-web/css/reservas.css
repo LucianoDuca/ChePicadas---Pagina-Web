@@ -8,4 +8,4 @@
 .field { display: grid; gap: 0.3rem; }
 .field label { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.04em; font-size: var(--step--1); }
 .field input, .field select, .field textarea { padding: 0.65rem 0.8rem; border: 2px solid var(--madera); border-radius: var(--radius); background: var(--hueso); width: 100%; }
-.field input:invalid:not(:placeholder-shown) { border-color: var(--rojo-bodegon); }
+.field input:invalid:not(:placeholder-shown) { border-color: var(--rojo-acento); }

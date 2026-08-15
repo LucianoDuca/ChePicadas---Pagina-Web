@@ -1,5 +1,5 @@
 /* sucursales.js — específico de la página Sucursales.
-   Muestra la sede activa primero y carga el mapa de Google recién al click (lazy). */
+   Muestra la sede activa primero. */
 
 import { getSedeData } from './sede.js';
 
@@ -14,19 +14,3 @@ function reorderSedes(activaId) {
 }
 document.addEventListener('sede:applied', (e) => reorderSedes(e.detail.id));
 reorderSedes(getSedeData().id);
-
-/* ---------- Mapa lazy: la fachada carga el iframe al click ---------- */
-document.querySelectorAll('.map-load').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const facade = btn.closest('.map-facade');
-    const src = facade.getAttribute('data-map-src');
-    if (!src) return;
-    const iframe = document.createElement('iframe');
-    iframe.src = src;
-    iframe.loading = 'lazy';
-    iframe.title = facade.getAttribute('data-map-title') || 'Mapa';
-    iframe.setAttribute('allowfullscreen', '');
-    iframe.referrerPolicy = 'no-referrer-when-downgrade';
-    facade.replaceChildren(iframe);
-  });
-});
