@@ -48,6 +48,8 @@ jobs:
           if [ -n "$BASE" ]; then
             find _site -name '*.html' -print0 \
               | xargs -0 sed -i -E "s#(href|src|srcset)=\"/#\1=\"${BASE}/#g"
+            find _site -name '*.css' -print0 \
+              | xargs -0 sed -i -E "s#url\((['\"]?)/#url(\1${BASE}/#g"
           fi
 
       - name: Upload artifact
