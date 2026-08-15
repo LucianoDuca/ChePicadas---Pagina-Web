@@ -67,12 +67,19 @@ document.querySelectorAll('[data-print]').forEach((btn) => {
   btn.addEventListener('click', () => window.print());
 });
 
-/* ---------- Navbar inferior: marcar el ítem activo según la URL ---------- */
+/* ---------- Navbar inferior: marcar el ítem activo según la URL ----------
+   Se compara contra a.pathname (ruta ya resuelta por el navegador) en vez
+   del data-tab fijo: así funciona igual si el sitio vive en la raíz del
+   dominio (Express) o bajo un subpath (ej. GitHub Pages). */
 (function tabbarActive() {
-  const path = location.pathname.replace(/\.html$/, '') || '/';
+  const normalize = (pathname) => {
+    let p = pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+    if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
+    return p || '/';
+  };
+  const path = normalize(location.pathname);
   document.querySelectorAll('.app-tabbar__item[data-tab]').forEach((a) => {
-    const tab = a.getAttribute('data-tab');
-    if (tab === path || (tab !== '/' && path.startsWith(tab))) a.setAttribute('aria-current', 'page');
+    if (normalize(a.pathname) === path) a.setAttribute('aria-current', 'page');
   });
 })();
 
