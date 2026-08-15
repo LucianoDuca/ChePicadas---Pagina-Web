@@ -3,8 +3,8 @@
    (nav interna, platos, picada fría/caliente)
    ============================================================ */
 
-.menu-nav { position: sticky; top: var(--header-h); z-index: 40; background: var(--crema); border-block: 1px solid var(--madera-suave); padding-block: 0.6rem; margin-bottom: var(--space-m); }
-.menu-nav ul { display: flex; gap: 0.55rem; overflow-x: auto; list-style: none; padding: 0.3rem 0.15rem 0.4rem; margin: 0; scrollbar-width: thin; }
+.menu-nav { position: sticky; top: var(--header-h); z-index: 40; background: var(--crema); border-block: 1px solid var(--madera-suave); padding-block: 0.7rem; margin-bottom: var(--space-m); }
+.menu-nav ul { display: flex; gap: 0.55rem; overflow-x: auto; list-style: none; padding: 0.45rem 0.15rem; margin: 0; scrollbar-width: thin; }
 .menu-nav a {
   white-space: nowrap; text-decoration: none; font-family: var(--font-head); text-transform: uppercase;
   letter-spacing: 0.04em; font-weight: 600; font-size: var(--step--1); padding: 0.45rem 1rem;
