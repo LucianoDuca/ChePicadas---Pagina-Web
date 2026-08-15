@@ -4,9 +4,25 @@
    ============================================================ */
 
 .menu-nav { position: sticky; top: var(--header-h); z-index: 40; background: var(--crema); border-block: 1px solid var(--madera-suave); padding-block: 0.5rem; margin-bottom: var(--space-m); }
-.menu-nav ul { display: flex; gap: 0.5rem; overflow-x: auto; list-style: none; padding: 0 0 0.2rem; margin: 0; scrollbar-width: thin; }
+.menu-nav ul { display: flex; gap: 0.5rem; overflow-x: auto; list-style: none; padding: 0.25rem 0.1rem 0.35rem; margin: 0; scrollbar-width: thin; }
 .menu-nav a { white-space: nowrap; text-decoration: none; font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.04em; font-size: var(--step--1); padding: 0.35rem 0.7rem; border: 1px solid var(--madera-suave); border-radius: 999px; color: var(--madera); }
 .menu-nav a:hover { background: var(--madera); color: var(--hueso); }
+
+/* ---------- BANNER DE LA CARTA (foto + overlay) ---------- */
+.menu-hero { position: relative; isolation: isolate; overflow: hidden; }
+.menu-hero__media { position: absolute; inset: 0; z-index: -2; background: var(--madera) url('/assets/img/imagen-fondo.jpg') center/cover no-repeat; }
+.menu-hero__media { background-image: -webkit-image-set(url('/assets/img/imagen-fondo.webp') type('image/webp'), url('/assets/img/imagen-fondo.jpg') type('image/jpeg')); background-image: image-set(url('/assets/img/imagen-fondo.webp') type('image/webp'), url('/assets/img/imagen-fondo.jpg') type('image/jpeg')); }
+.menu-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(58,42,32,0.72) 0%, rgba(58,42,32,0.92) 100%); }
+.menu-hero .wrap { padding-block: clamp(2.2rem, 8vw, 3.4rem); position: relative; }
+.menu-hero .eyebrow { color: var(--dorado); }
+.menu-hero h1 { color: var(--hueso); text-shadow: 0 3px 18px rgba(0,0,0,0.5); }
+.menu-hero .lead { color: var(--crema); }
+.menu-hero .leyenda-precios { color: var(--crema); opacity: 0.85; }
+.menu-hero .btn--ghost { color: var(--hueso); border-color: var(--hueso); }
+.menu-hero .btn--ghost:hover { background: var(--hueso); color: var(--madera); }
+
+/* ---------- BADGE DECORATIVO (tarjeta "La picada de la casa") ---------- */
+.carta-badge { position: absolute; top: -14px; right: var(--space-m); z-index: 2; background: var(--tomate); color: var(--hueso); font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.06em; font-size: var(--step--1); font-weight: 700; padding: 0.4rem 0.9rem; border-radius: var(--radius); box-shadow: var(--shadow-s); transform: rotate(4deg); }
 
 .menu-section { scroll-margin-top: calc(var(--header-h) + 60px); }
 .menu-section > h2 { border-bottom: 3px solid var(--mostaza); padding-bottom: 0.3rem; margin-bottom: var(--space-s); }
@@ -35,4 +51,7 @@
   .dish__price, .menu-section > h2, .año, h1, h2, h3 { color: #000 !important; }
   a { color: #000; text-decoration: none; }
   .section, .section--tight { padding-block: 0.5rem; }
+  .menu-hero__media, .menu-hero::after { display: none !important; }
+  .menu-hero .eyebrow, .menu-hero .lead, .menu-hero .leyenda-precios { color: #000 !important; text-shadow: none !important; }
+  .carta-badge { background: #fff !important; color: #000 !important; border: 1px solid #000; box-shadow: none; }
 }
