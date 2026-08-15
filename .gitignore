@@ -1,3 +1,11 @@
 node_modules/
 .env
 *.log
+
+.vercel
+.vscode/
+
+# Material de referencia / briefs del proyecto (no forma parte del sitio)
+files.zip
+ChePicadas-Paquete-Completo.zip
+03_SuperPrompt_construccion_web.md
