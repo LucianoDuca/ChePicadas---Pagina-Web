@@ -24,6 +24,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
       - name: Build static site folder
         run: |
           mkdir -p _site
@@ -36,8 +40,15 @@ jobs:
             chepicadas-web/ _site/
           touch _site/.nojekyll
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+          # El sitio usa rutas absolutas (/css/..., /assets/...) pensadas para
+          # servir desde la raíz del dominio (Express/dominio real). GitHub
+          # Pages publica bajo un subpath, así que acá les anteponemos el
+          # base_path que calculó configure-pages solo en la copia publicada.
+          BASE="${{ steps.pages.outputs.base_path }}"
+          if [ -n "$BASE" ]; then
+            find _site -name '*.html' -print0 \
+              | xargs -0 sed -i -E "s#(href|src|srcset)=\"/#\1=\"${BASE}/#g"
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
